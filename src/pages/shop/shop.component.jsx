@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SHOP_DATA from './shop.data';
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
