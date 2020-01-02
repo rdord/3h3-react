@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -13,8 +13,9 @@ function App() {
   useEffect(() => {
     const unsubscribeFromAuth = () =>
       auth.onAuthStateChanged(user => {
-        setCurrentUser(user);
-        console.log(user);
+        createUserProfileDocument(user);
+        // setCurrentUser(user);
+        // console.log(user);
       });
 
     return unsubscribeFromAuth();
