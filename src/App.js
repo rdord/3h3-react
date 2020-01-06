@@ -25,7 +25,7 @@ function App() {
     };
 
     return unsubscribeFromAuth();
-  }, [currentUser]);
+  }, []);
 
   return (
     <div>
